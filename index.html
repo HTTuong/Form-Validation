@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./main.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="main">
+
+        <form action="" method="POST" class="form" id="form-1">
+            <h3 class="heading">Member Registration</h3>
+
+            <div class="spacer"></div>
+
+            <div class="form-group">
+                <label for="fullname" class="form-label">Fullname</label>
+                <input id="fullname" name="fullname" rules="required" type="text" placeholder="VD: Tuong Hoang"
+                    class="form-control">
+                <span class="form-message"></span>
+            </div>
+
+            <div class="form-group horizontal">
+                <div>
+                    <label for="password_confirmation" class="form-label">Sex</label>
+                    <div>
+                        <input name="gender" rules="required" type="radio" value="male" class="form-control">
+                        <span>Male</span>
+                    </div>
+                    <div>
+                        <input name="gender" rules="required" type="radio" value="female" class="form-control">
+                        <span>Female</span>
+                    </div>
+                    <div>
+                        <input name="gender" rules="required" type="radio" value="other" class="form-control">
+                        <span>Other</span>
+                    </div>
+                </div>
+                <span class="form-message"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="province" class="form-label">Province/City</label>
+                <select id="province" rules="required" name="province" class="form-control">
+                    <option value="">--- Province/City ---</option>
+                    <option value="hni">Ha Noi</option>
+                    <option value="hcm">Ho Chi Minh</option>
+                </select>
+                <span class="form-message"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="email" class="form-label">Email</label>
+                <input id="email" name="email" rules="required|email" type="text" placeholder="VD: email@domain.com"
+                    class="form-control">
+                <span class="form-message"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="password" class="form-label">Password</label>
+                <input id="password" name="password" rules="required|min:6" type="password" placeholder="Enter password"
+                    class="form-control">
+                <span class="form-message"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="password_confirmation" class="form-label">Confirm password</label>
+                <input id="password_confirmation" rules="required|verified" name="password_confirmation"
+                    placeholder="Confirm password" type="password" class="form-control">
+                <span class="form-message"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="avatar" class="form-label">Avatar</label>
+                <input id="avatar" name="avatar" type="file" class="form-control">
+                <span class="form-message"></span>
+            </div>
+
+            <button class="form-submit">Register</button>
+        </form>
+
+    </div>
+
+
+    <script src="./validator.js"></script>
+
+    <script>
+        // Method 1
+        /*
+        Validator({
+            form: '#form-1',
+            formGroupSelector: '.form-group',
+            errorSelector: '.form-message',
+            rules: [
+                Validator.isRequired('#fullname', 'Vui lòng nhập tên đầy đủ'),
+                Validator.isRequired('#email'),
+                Validator.isEmail('#email'),
+                Validator.minLength('#password', 6),
+                Validator.isRequired('#password_confirmation'),
+                Validator.isConfirmed('#password_confirmation', function () {
+                    return document.querySelector('#form-1 #password').value;
+                }, 'Mật khẩu nhập vào không chính xác'),
+                Validator.isRequired('input[name="gender"]'),
+                Validator.isRequired('#province'),
+                Validator.isRequired('#avatar'),
+            ],
+            onSubmit: function (data) {
+                //Call API
+                console.log(data);
+            }
+        });
+        */
+
+        // Method 2
+        var form = new Validator('#form-1');
+        form.onSubmit = function (formData) {
+            console.log(formData);
+        }
+
+    </script>
+</body>
+
+</html>
