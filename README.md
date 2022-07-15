@@ -21,6 +21,7 @@
 
 
 ## Illustrations
-<img width="873" alt="Screen Shot 2022-07-15 at 21 36 33" src="https://user-images.githubusercontent.com/89579792/179289287-00b5c162-0749-4b36-b4ce-a15da5eabafd.png">
+<img width="1440" alt="Screen Shot 2022-07-15 at 22 46 52" src="https://user-images.githubusercontent.com/89579792/179300108-0bf2ae63-8770-4bc9-8480-1aa4b9dc857e.png">
+
 
 
